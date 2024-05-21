@@ -29,6 +29,8 @@ let addPost = () => {
   debugger;
  let text = newPostElement.current.value;
  alert(text);
+ console.log(newPostElement);
+ console.log(text);
 }
 
     return (
@@ -66,12 +68,17 @@ export default MyPosts;
  как в классическом JS, мы имеем в Реакте такую
  конструкцию, в которой дается взятие элемента по 
  ссылке:
- let newPostElement = React.createRef('newPost')
+ let newPostElement = React.createRef()
 
  Затем мы привязываем новый создоваемый элемент 
  к определенному  html-тегу, где прописвывем ссылку
  на этот элемент в виде атрибута:
  <textarea ref ={newPostElement}></textarea>
+То есть,  наш newPostElement является тегом 
+<textarea> <textarea/>. 
+А запись current.value относится к тому, что
+вводится ( пишется ) в поле ввода.
+ 
  И затем прописываем вывод нового элемента в поле 
  ввода, таким образом:
  let text = newPostElement.current.value;
